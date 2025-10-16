@@ -1,0 +1,19 @@
+###
+
+###
+//@no-log
+GET http://localhost:8080/v1.0/hello
+
+###
+//@no-log
+GET http://localhost:8080/v1.0/hello/concurent
+
+
+###
+//@no-log
+GET http://localhost:8080/v1.0/hello/retry
+
+
+###
+//@no-log
+GET http://localhost:8080/v2.0/hello/json
