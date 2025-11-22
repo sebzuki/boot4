@@ -38,7 +38,7 @@ public class RetryService {
 
     @Retryable(
             includes = IllegalArgumentException.class,
-            maxAttempts = 5, // string aussi pour les param
+            maxRetries = 5, // string aussi pour les param
             delay = 1000,
             maxDelay = 5000
     )
@@ -51,7 +51,7 @@ public class RetryService {
     public String test3() throws RetryException {
         var retryPolicy = RetryPolicy.builder()
                 .includes(IllegalArgumentException.class)
-                .maxAttempts(5)
+                .maxRetries(5)
                 .delay(Duration.ofMillis(1000))
                 .maxDelay(Duration.ofSeconds(5))
                 .build();
